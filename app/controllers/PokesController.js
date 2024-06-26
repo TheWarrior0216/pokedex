@@ -20,7 +20,20 @@ export class PokesController {
   drawPokemon() {
     const pokemons = AppState.pokedex
     let Html = ''
-    pokemons.forEach(pokemon => Html += `<div role= "button" class="d-block col-12 my-3 border fs-3 text-light bg-info text-capitalize">${pokemon.name}</div>`)
+    pokemons.forEach(pokemon => Html += `<div onclick ="app.PokesController.choosePokemon('${pokemon.name}')" role= "button" class="d-block col-12 my-3 border fs-3 text-light bg-info text-capitalize">${pokemon.name}</div>`)
     setHTML('PokemonSelect', Html)
+  }
+  async choosePokemon(pokemonName) {
+    try {
+      await pokeServices.choosePokemon(pokemonName)
+      this.drawActivePokemon()
+    } catch (error) {
+      Pop.error(error)
+    }
+  }
+  drawActivePokemon() {
+    const pokemons = AppState.activePokemon
+    console.log(pokemons)
+    setHTML('activeBody', pokemons.activePokeTemplate)
   }
 }

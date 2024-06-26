@@ -9,3 +9,8 @@
 .profile-picture.profile-picture-sm {
   height: 64px;
 }
+
+.alt-image {
+  height: 15em;
+  width: 15em;
+}

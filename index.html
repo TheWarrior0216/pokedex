@@ -12,12 +12,12 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="assets/style/main.css">
   <link rel="stylesheet" href="assets/style/style.css">
-  <title>pokedex</title>
+  <title>Pokedex</title>
 </head>
 
 <body>
   <!-- SECTION -->
-  <header>
+  <header class="border-bottom">
     <nav class="navbar navbar-dark navbar-expand bg-dark text-light px-2">
       <a class="navbar-brand" href="#">
         <img src="https://codeworks.blob.core.windows.net/public/assets/img/cw-mark.png" height="45" alt=""
@@ -35,12 +35,12 @@
   </header>
 
   <!-- SECTION -->
-  <main class="bg-dark">
+  <main class="bg-dark border-left border-right">
 
     <section id="router-view">
       <!-- primary viewport -->
     </section>
-    <section class="text-end me-5">
+    <section class="text-end mt-3 me-5">
       <button class="btn btn-primary " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
         aria-controls="offcanvasRight">Choose your Pokemon</button>
 
@@ -55,12 +55,15 @@
         </div>
       </div>
     </section>
+    <section id="activeBody">
+
+    </section>
   </main>
 
   <!-- SECTION -->
-  <footer class="bg-dark text-light">
+  <footer class="bg-dark text-light border-top">
     <div class="text-center no-select">
-      <p class="mb-0"><small>Made with 💖 by CodeWorks</small></p>
+      <p class="mb-0"><small>Made with 💜 by Seth @ CodeWorks</small></p>
     </div>
   </footer>
 
