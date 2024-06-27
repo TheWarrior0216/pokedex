@@ -1,8 +1,9 @@
 import { AppState } from "../AppState.js"
-import { api } from "../services/AxiosService.js"
+
 import { pokeServices } from "../services/PokeServices.js"
 import { Pop } from "../utils/Pop.js"
 import { setHTML } from "../utils/Writer.js"
+import { SandboxsController } from "./SandboxsController.js"
 
 export class PokesController {
   constructor() {
@@ -27,6 +28,8 @@ export class PokesController {
     try {
       await pokeServices.choosePokemon(pokemonName)
       this.drawActivePokemon()
+      // @ts-ignore
+
     } catch (error) {
       Pop.error(error)
     }

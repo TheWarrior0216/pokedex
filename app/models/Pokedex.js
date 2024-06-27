@@ -1,11 +1,13 @@
 export class Pokedex {
   constructor(data) {
     this.name = data.name
-    this.nickName = data.nickName
-    this.img = data.sprites.front_shiny
-    this.weight = data.weight
-    this.height = data.height
-    this.types = data.types.name
+    this.nickName = data.nickName || ''
+    this.img = data.img || data.sprites.front_shiny
+    this.weight = data.weight.toString()
+    this.height = data.height.toString()
+    debugger
+    this.types = data.types[1] ? `${data.types[1].type.name} + ${data.types[0].type.name}` : data.types[0].type?.name
+    debugger
   }
   get activePokeTemplate() {
     return `
@@ -28,7 +30,7 @@ export class Pokedex {
                 <h3>Weight: ${this.weight / 10} KG</h3>
               </div>
               <div class="col-6 p-3">
-                <h3>type:</h3>
+                <h3>typing: ${this.types}</h3>
               </div>
             </div>
           </div>
