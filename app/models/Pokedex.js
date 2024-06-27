@@ -12,8 +12,8 @@ export class Pokedex {
   get activePokeTemplate() {
     return `
 <div class="container mx-5 text-light">
-        <div class="row">
-          <div class="col-12 text-center border">
+        <div class="row justify-content-start">
+          <div class="col-10 text-center border">
             <div class="row ">
               <div class="col-12 p-5">
                 <h1>${this.name}</h1>
